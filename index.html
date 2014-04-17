@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  
+  <!-- disable zooming -->
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
+  
+  <title>IMPACTLE Learn Cube</title>
+  
+  <link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+  <link href="spritz.css" rel="stylesheet" media="screen" type="text/css" />
+  <link href="cube.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body>
+  <h1>IMPACTLE Learn Cube</h1>
+  <h2>A Learning Tool for Stephen Covey's<br/>"7 Habits of Highly Effective People"</h2>
+
+  <section class="container">
+  <div id="cube" class="show-front">
+    <script>
+      var face = new Array("front","back","right","left","top","bottom","seven");
+      for(i=0;i<6;++i){
+        document.write("<div class='"+face[i]+"'>");
+        document.write("<div class='card-front'>");
+        document.write("<img src='"+(i+1)+".jpg'/>");
+        document.write("</div>");
+        document.write("<div class='card-back' onmouseover='javascript:spritz("+(i+1)+");'>");
+        document.write("<div id='spritz_result_"+(i+1)+"'></div>");
+        document.write("</div>");
+        document.write("</div>");
+      }
+    </script>
+ </div>
+  
+  <div class="square-container">
+      <div id="square">
+      <div class="seven">
+        <div class="card-front">
+         <img src="7.jpg"/>
+       </div>
+       <div class="card-back" onmouseover='javascript:spritz(7);'>
+          <div id='spritz_result_7'></div>
+       </div>
+    </div>
+      </div>
+  </div>
+  </section>
+ 
+  <section id="options">
+    <p id="show-buttons">
+    <script>
+      for(i=0;i<7;++i){
+        document.write("<button class='show-"+face[i]+"' id='"+face[i]+"-link'");
+if (i==6) {
+          document.write(" style='display:none;'");
+        }        
+        document.write(">"+(i+1)+"</button>");
+      }
+    </script>
+    
+    </p>
+    <button id="reset-box" style="display:none;">Reset</button>
+  </section>
+
+  <section class="text">  
+  <p>Click on the buttons to display the cartoon. Hover over the cartoon to see the text. When you have read the first six, the seventh habit will become visible.</p>
+  <p>There was a reset button, but there are too many bugs, so when you have finished, click the good old refresh page button to start again. You could always fix the bugs if you want.
+  <p>As a simple learning tool, the Learn Cube works well enough. Its main flaw is that it can only really display six sides. The 7th is a bit forced. Saying that, it has given me ideas for something new. Something that has a better story flow. Anyhow, that's me done on it for now.</p>
+<p>Cheers</p>
+<p>Stuart</p>
+<p>11 April 2014</p>
+<p>Cartoons and dodgy glue code are by Stuart Bull. See more cartoons on <a href="http://impactle.com/">Impactle.com</a>; all cartoons are <a href="http://impactle.com/terms/">released under Creative Commons Attribution 3.0 Unported License</a></p>
+    <p>Thanks to David DeSandro for the <a href="http://desandro.github.io/3dtransforms/docs/cube.html">CSS 3D cube transforms</a>, Andy McFee for the <a href="http://andymcfee.com/2012/08/24/css3-flip-cards/">CSS3 Flip Cards</a> and Rich Jones for his <a href="https://github.com/Miserlou/OpenSpritz">OpenSpritz</a> project. Text is taken from Shlomo Sprung's <a href="http://www.businessinsider.com/stephen-coveys-7-habits-of-highly-effective-people-2012-7">tribute to Stephen Covey</a>.</p>
+  </section>
+ 
+  <script src="spritz.js"></script>
+  <script src="utils.js"></script>
+  <script src="rotate-box.js"></script>
+  
+  <footer>
+    <p id="disclaimer">Sorry, your browser does not support CSS 3D transforms. Try viewing this page in <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox Aurora</a>, or on an iOS device.</p>
+  </footer>
+</body>
+</html>

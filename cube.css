@@ -1,0 +1,205 @@
+    .container {
+  position: relative;
+  margin: 10px auto;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+    }
+
+    .square-container{
+      position: absolute;
+      top:0;
+      left:0;
+    }
+    
+    #square{
+      display: none;
+    }
+    
+    #cube,#square {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all 1.0s linear;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: all 1.0s linear;
+  -o-transform-style: preserve-3d;
+  -o-transition: all 1.0s linear;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+    }
+
+    #cube div,#square div {
+      display: block;
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #eee;
+      line-height: 14px;
+      font-size: 12px;
+      font-weight: normal;
+      color: #202020;
+      text-align: center;
+    }
+
+    #cube.panels-backface-invisible div {
+      -webkit-backface-visibility: hidden;
+         -moz-backface-visibility: hidden;
+           -o-backface-visibility: hidden;
+              backface-visibility: hidden;
+    }
+
+    #cube div.front, #square div.seven {
+      -webkit-transform: translateZ( 150px );
+         -moz-transform: translateZ( 150px );
+           -o-transform: translateZ( 150px );
+              transform: translateZ( 150px );
+  }
+    
+    #cube div.back   {
+      -webkit-transform: rotateX( -180deg ) translateZ( 150px );
+         -moz-transform: rotateX( -180deg ) translateZ( 150px );
+           -o-transform: rotateX( -180deg ) translateZ( 150px );
+              transform: rotateX( -180deg ) translateZ( 150px );
+    
+    }
+
+    #cube div.right {
+      -webkit-transform: rotateY(   90deg ) translateZ( 150px );
+         -moz-transform: rotateY(   90deg ) translateZ( 150px );
+           -o-transform: rotateY(   90deg ) translateZ( 150px );
+              transform: rotateY(   90deg ) translateZ( 150px );
+    }
+    #cube div.left {
+      -webkit-transform: rotateY(  -90deg ) translateZ( 150px );
+         -moz-transform: rotateY(  -90deg ) translateZ( 150px );
+           -o-transform: rotateY(  -90deg ) translateZ( 150px );
+              transform: rotateY(  -90deg ) translateZ( 150px );
+    }
+    #cube div.top {
+      -webkit-transform: rotateX(   90deg ) translateZ( 150px );
+         -moz-transform: rotateX(   90deg ) translateZ( 150px );
+           -o-transform: rotateX(   90deg ) translateZ( 150px );
+              transform: rotateX(   90deg ) translateZ( 150px );
+    }
+    #cube div.bottom {
+      -webkit-transform: rotateX(  -90deg ) translateZ( 150px );
+         -moz-transform: rotateX(  -90deg ) translateZ( 150px );
+           -o-transform: rotateX(  -90deg ) translateZ( 150px );
+              transform: rotateX(  -90deg ) translateZ( 150px );
+    }
+
+    #cube.show-front {
+      -webkit-transform: translateZ( -150px );
+         -moz-transform: translateZ( -150px );
+           -o-transform: translateZ( -150px );
+              transform: translateZ( -150px );
+    }
+    #cube.show-back {
+      -webkit-transform: translateZ( -150px ) rotateX( -180deg );
+         -moz-transform: translateZ( -150px ) rotateX( -180deg );
+           -o-transform: translateZ( -150px ) rotateX( -180deg );
+              transform: translateZ( -150px ) rotateX( -180deg );
+    }
+
+    #cube.show-right {
+      -webkit-transform: translateZ( -150px ) rotateY(  -90deg );
+         -moz-transform: translateZ( -150px ) rotateY(  -90deg );
+           -o-transform: translateZ( -150px ) rotateY(  -90deg );
+              transform: translateZ( -150px ) rotateY(  -90deg );
+    }
+    #cube.show-left {
+      -webkit-transform: translateZ( -150px ) rotateY(   90deg );
+         -moz-transform: translateZ( -150px ) rotateY(   90deg );
+           -o-transform: translateZ( -150px ) rotateY(   90deg );
+              transform: translateZ( -150px ) rotateY(   90deg );
+    }
+    #cube.show-top {
+      -webkit-transform: translateZ( -150px ) rotateX(  -90deg );
+         -moz-transform: translateZ( -150px ) rotateX(  -90deg );
+           -o-transform: translateZ( -150px ) rotateX(  -90deg );
+              transform: translateZ( -150px ) rotateX(  -90deg );
+    }
+    #cube.show-bottom {
+      -webkit-transform: translateZ( -150px ) rotateX(   90deg );
+         -moz-transform: translateZ( -150px ) rotateX(   90deg );
+           -o-transform: translateZ( -150px ) rotateX(   90deg );
+              transform: translateZ( -150px ) rotateX(   90deg );
+    }
+
+#seven-link{ display: none;}
+ 
+.seven .card-front,
+.seven .card-back,
+.front .card-front,
+.front .card-back,
+.back .card-front,
+.back .card-back,
+.right .card-front,
+.right .card-back,
+.left .card-front,
+.left .card-back,
+.top .card-front,
+.top .card-back,
+.bottom .card-front,
+.bottom .card-back{
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 500ms;
+  -moz-transition: -moz-transform 500ms;
+  -o-transition: -o-transform 500ms;
+  transition: transform 500ms;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.seven .card-front, .front .card-front, .back .card-front, .right .card-front, .left .card-front, .top .card-front, .bottom .card-front {
+  -webkit-transform: perspective(300) rotateY(0);
+  -moz-transform: perspective(300) rotateY(0);
+  -ms-transform: perspective(300) rotateY(0);
+  -o-transform: perspective(300) rotateY(0);
+  transform: perspective(300) rotateY(0);
+  z-index: 900;
+}
+.seven .card-back, .front .card-back, .back .card-back, .right .card-back, .left .card-back, .top .card-back, .bottom .card-back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  z-index: 800;
+}
+.seven:hover .card-front, .front:hover .card-front, .back:hover .card-front, .right:hover .card-front, .left:hover .card-front, .top:hover .card-front, .bottom:hover .card-front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform: perspective(300) rotateY(180deg);
+  -moz-transform: perspective(300) rotateY(180deg);
+  -ms-transform: perspective(300) rotateY(180deg);
+  -o-transform: perspective(300) rotateY(180deg);
+  transform: perspective(300) rotateY(180deg);
+}
+.seven:hover .card-back, .front:hover .card-back, .back:hover .card-back, .right:hover .card-back, .left:hover .card-back, .top:hover .card-back, .bottom:hover .card-back {
+  z-index: 950;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform: perspective(300) rotateY(0deg);
+  -moz-transform: perspective(300) rotateY(0deg);
+  -ms-transform: perspective(300) rotateY(0deg);
+  -o-transform: perspective(300) rotateY(0deg);
+  transform: perspective(300) rotateY(0deg);
+}
+
